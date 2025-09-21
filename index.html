@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TUNE CAT fashion - Coming Soon</title>
+    <style>
+        /* --- Google Font --- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        /* --- Basic Setup & Dark Theme --- */
+        body {
+            background-color: #121212;
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            text-align: center;
+            overflow-x: hidden; /* Prevents horizontal scroll */
+        }
+
+        /* --- Header & Animated Logo Banner --- */
+        .header-banner {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            height: 250px;
+            margin: 40px auto 20px auto;
+        }
+
+        .header-banner img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .logo-top {
+            animation: flashFade 14s infinite;
+        }
+
+        @keyframes flashFade {
+            0%, 100% { opacity: 1; }
+            45% { opacity: 1; }
+            50% { opacity: 0; }
+            95% { opacity: 0; }
+        }
+
+        /* --- Main Content Styling --- */
+        main {
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            font-weight: 600;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 0;
+            color: #E0E0E0;
+            animation: fadeInDown 1s ease-out; /* Animation for h1 */
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            font-weight: 300;
+            color: #BDBDBD;
+            margin-top: 5px;
+            margin-bottom: 60px;
+            animation: fadeInDown 1s ease-out 0.2s; /* Delayed animation */
+            animation-fill-mode: backwards; /* Start animation from hidden state */
+        }
+
+        /* --- Aesthetically Pleasing Product Grid --- */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px; /* Increased gap */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-item {
+            position: relative; /* Needed for positioning the buttons */
+            border-radius: 8px;
+            overflow: hidden; /* Keeps the buttons inside the rounded corners */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.8s ease-out; /* Entry animation for items */
+            animation-fill-mode: backwards;
+        }
+        
+        /* Staggered animation delay for a fluid entry */
+        .product-item:nth-child(1) { animation-delay: 0.2s; }
+        .product-item:nth-child(2) { animation-delay: 0.4s; }
+        .product-item:nth-child(3) { animation-delay: 0.6s; }
+        .product-item:nth-child(4) { animation-delay: 0.8s; }
+
+
+        .product-item img {
+            width: 100%;
+            display: block; /* Removes bottom space under image */
+            transition: transform 0.4s ease; /* Smoother transition */
+        }
+
+        /* --- Hover Effect --- */
+        .product-item:hover {
+            transform: translateY(-10px); /* Lifts the card up */
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+        }
+
+        .product-item:hover img {
+            transform: scale(1.05); /* Slightly enlarges the image */
+        }
+
+        /* --- NEW: Product Actions and Icons --- */
+        .product-actions {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+            backdrop-filter: blur(5px); /* Frosted glass effect */
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 15px 0;
+            transform: translateY(100%); /* Start hidden below the item */
+            transition: transform 0.4s ease; /* Smooth slide-up transition */
+        }
+
+        .product-item:hover .product-actions {
+            transform: translateY(0); /* Slide into view on hover */
+        }
+
+        .icon-btn {
+            background-color: #fff;
+            border: none;
+            border-radius: 50%; /* Makes it a circle */
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .icon-btn:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.1); /* Pop effect on hover */
+        }
+
+        .icon-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: #121212; /* Icon color */
+        }
+
+
+        /* --- Footer --- */
+        footer {
+            margin-top: 80px;
+            padding: 20px;
+            color: #757575;
+            font-size: 0.9em;
+        }
+
+        /* --- NEW: Keyframe Animations for fluid entry --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-banner">
+            <img src="name.PNG" alt="TUNE CAT Logo Base">
+            <img src="TUNCAT.jpg" alt="TUNE CAT Flash Ad" class="logo-top">
+        </div>
+    </header>
+
+    <main>
+        <h1>Coming Soon</h1>
+        <p class="subtitle">TUNECAT. Wear the beat.</p>
+
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="cloth1.jpg" alt="Stylish clothing item 1">
+                <div class="product-actions">
+                    <button class="icon-btn purchase-btn" onclick="showPurchaseMessage()" title="Purchase">
+                        <svg viewBox="0 0 24 24"><path d="M17,18C15.89,18 15,18.89 15,20A2,2 0 0,0 17,22A2,2 0 0,0 19,20C19,18.89 18.1,18 17,18M1,2V4H3L6.6,11.59L5.24,14.04C5.09,14.32 5,14.65 5,15A2,2 0 0,0 7,17H19V15H7.42A0.25,0.25 0 0,1 7.17,14.75L8.1,13H15.55C16.3,13 16.96,12.58 17.3,11.97L20.88,5.5C20.95,5.37 21,5.19 21,5A1,1 0 0,0 20,4H5.21L4.27,2H1V2M7,18C5.89,18 5,18.89 5,20A2,2 0 0,0 7,22A2,2 0 0,0 9,20C9,18.89 8.1,18 7,18Z" /></svg>
+                    </button>
+                    <button class="icon-btn cart-btn" onclick="showPurchaseMessage()" title="Add to Cart">
+                        <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M17,13H13V17H11V13H7V11H11V7H13V11H17V13Z" /></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="cloth2.jpg" alt="Stylish clothing item 2">
+                <div class="product-actions">
+                    <button class="icon-btn purchase-btn" onclick="showPurchaseMessage()" title="Purchase">
+                         <svg viewBox="0 0 24 24"><path d="M17,18C15.89,18 15,18.89 15,20A2,2 0 0,0 17,22A2,2 0 0,0 19,20C19,18.89 18.1,18 17,18M1,2V4H3L6.6,11.59L5.24,14.04C5.09,14.32 5,14.65 5,15A2,2 0 0,0 7,17H19V15H7.42A0.25,0.25 0 0,1 7.17,14.75L8.1,13H15.55C16.3,13 16.96,12.58 17.3,11.97L20.88,5.5C20.95,5.37 21,5.19 21,5A1,1 0 0,0 20,4H5.21L4.27,2H1V2M7,18C5.89,18 5,18.89 5,20A2,2 0 0,0 7,22A2,2 0 0,0 9,20C9,18.89 8.1,18 7,18Z" /></svg>
+                    </button>
+                    <button class="icon-btn cart-btn" onclick="showPurchaseMessage()" title="Add to Cart">
+                        <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M17,13H13V17H11V13H7V11H11V7H13V11H17V13Z" /></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="cloth3.jpg" alt="Stylish clothing item 3">
+                <div class="product-actions">
+                    <button class="icon-btn purchase-btn" onclick="showPurchaseMessage()" title="Purchase">
+                         <svg viewBox="0 0 24 24"><path d="M17,18C15.89,18 15,18.89 15,20A2,2 0 0,0 17,22A2,2 0 0,0 19,20C19,18.89 18.1,18 17,18M1,2V4H3L6.6,11.59L5.24,14.04C5.09,14.32 5,14.65 5,15A2,2 0 0,0 7,17H19V15H7.42A0.25,0.25 0 0,1 7.17,14.75L8.1,13H15.55C16.3,13 16.96,12.58 17.3,11.97L20.88,5.5C20.95,5.37 21,5.19 21,5A1,1 0 0,0 20,4H5.21L4.27,2H1V2M7,18C5.89,18 5,18.89 5,20A2,2 0 0,0 7,22A2,2 0 0,0 9,20C9,18.89 8.1,18 7,18Z" /></svg>
+                    </button>
+                    <button class="icon-btn cart-btn" onclick="showPurchaseMessage()" title="Add to Cart">
+                        <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M17,13H13V17H11V13H7V11H11V7H13V11H17V13Z" /></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="cloth4.jpg" alt="Stylish clothing item 4">
+                <div class="product-actions">
+                    <button class="icon-btn purchase-btn" onclick="showPurchaseMessage()" title="Purchase">
+                         <svg viewBox="0 0 24 24"><path d="M17,18C15.89,18 15,18.89 15,20A2,2 0 0,0 17,22A2,2 0 0,0 19,20C19,18.89 18.1,18 17,18M1,2V4H3L6.6,11.59L5.24,14.04C5.09,14.32 5,14.65 5,15A2,2 0 0,0 7,17H19V15H7.42A0.25,0.25 0 0,1 7.17,14.75L8.1,13H15.55C16.3,13 16.96,12.58 17.3,11.97L20.88,5.5C20.95,5.37 21,5.19 21,5A1,1 0 0,0 20,4H5.21L4.27,2H1V2M7,18C5.89,18 5,18.89 5,20A2,2 0 0,0 7,22A2,2 0 0,0 9,20C9,18.89 8.1,18 7,18Z" /></svg>
+                    </button>
+                    <button class="icon-btn cart-btn" onclick="showPurchaseMessage()" title="Add to Cart">
+                        <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M17,13H13V17H11V13H7V11H11V7H13V11H17V13Z" /></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 TUNE CAT fashion. All Rights Reserved.</p>
+    </footer>
+    
+    <audio id="background-music" loop></audio>
+
+    <script>
+        // --- NEW: Function for purchase/cart message ---
+        function showPurchaseMessage() {
+            alert('Purchase would soon be available on website');
+        }
+
+        // --- NEW: Background Music Player ---
+        window.addEventListener('DOMContentLoaded', (event) => {
+            // This is where you add your song files.
+            // Just add more names to this list!
+            const songs = [
+                'melanin.mp3', 
+                // 'another-song.mp3',
+                // 'cool-track.mp3'
+            ];
+
+            // Pick a random song from the list
+            const randomSong = songs[Math.floor(Math.random() * songs.length)];
+            
+            const audioPlayer = document.getElementById('background-music');
+            audioPlayer.src = randomSong;
+
+            // Important: Modern browsers often block audio from playing automatically.
+            // A user must first interact with the page (like clicking) for sound to start.
+            // This code attempts to play, but it might require a user click to work.
+            const playPromise = audioPlayer.play();
+
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    // Autoplay started!
+                }).catch(error => {
+                    // Autoplay was prevented.
+                    console.log("Autoplay was prevented by the browser. A user click is needed.");
+                    // You could show a "Click to play music" button here if you want.
+                    document.body.addEventListener('click', () => {
+                        audioPlayer.play();
+                    }, { once: true }); // The event listener is removed after the first click
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
